@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APS · Portfólio</title>
+<meta name="description" content="Analista de Negócios e Product Owner com mais de 20 anos de experiência em TI. Tecnologia, processos e pessoas para resolver problemas reais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6efe6;
+    --bg-hero:#f3e8dc;
+    --bg-alt:#f1e7da;
+    --ink:#4a1c1c;
+    --text:#5b4a44;
+    --muted:#7a6a63;
+    --accent:#b5532f;
+    --accent-dark:#7a2323;
+    --sand:#ead6c1;
+    --line:#e4d6c6;
+    --card:#faf5ee;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+    --hand:'Caveat', cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* NAV */
+  header{background:var(--bg-hero)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:20px}
+  .logo{font-family:var(--serif);font-size:36px;color:var(--ink);letter-spacing:.5px;line-height:1}
+  .menu{display:flex;gap:34px;margin-left:36px;margin-right:auto}
+  .menu a{font-size:13px;color:var(--ink);padding-bottom:4px;border-bottom:1.5px solid transparent}
+  .menu a.active{border-color:var(--accent-dark)}
+  .menu a:hover{border-color:var(--accent)}
+  .nav-cta{font-size:13px;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;display:inline-flex;gap:10px;align-items:center}
+  .arrow{display:inline-block;width:16px;height:10px}
+
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1fr 1.15fr;gap:30px;align-items:center;padding:34px 0 60px}
+  .eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+  .eyebrow svg{width:56px;height:10px}
+  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5vw,52px);line-height:1.12;color:var(--ink);margin:26px 0 22px}
+  .hero p{max-width:380px;font-size:14.5px;color:var(--text)}
+  .btn{display:inline-flex;align-items:center;gap:14px;margin-top:30px;background:var(--ink);color:#fff;padding:15px 26px;border-radius:999px;font-size:13px;transition:transform .2s,background .2s}
+  .btn:hover{background:var(--accent-dark);transform:translateY(-2px)}
+  .hero-art svg{width:100%;height:auto;display:block}
+
+  /* CASES */
+  .cases{background:var(--bg);padding:56px 0 64px}
+  .section-head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:34px}
+  .section-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,4.5vw,46px);line-height:1.1;color:var(--ink);margin-top:14px}
+  .section-head p{font-size:13.5px;color:var(--muted);max-width:340px;padding-bottom:6px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px 20px 24px;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
+  .card:hover{box-shadow:0 14px 30px rgba(74,28,28,.08);transform:translateY(-3px)}
+  .card .thumb{border-radius:6px;overflow:hidden;background:var(--sand)}
+  .card .thumb svg{display:block;width:100%;height:auto}
+  .tag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin:22px 0 10px}
+  .card h3{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.15;color:var(--ink);margin-bottom:14px}
+  .card p.desc{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);background:#f2e6d9;border-radius:6px;padding:16px 8px;margin-bottom:22px}
+  .stat{padding:0 14px;border-right:1px solid #dcc9b5}
+  .stat:last-child{border-right:0}
+  .stat strong{display:block;font-family:var(--serif);font-weight:500;font-size:26px;color:var(--accent-dark);line-height:1.1}
+  .stat strong small{font-size:17px}
+  .stat span{font-size:11px;color:var(--muted);line-height:1.35;display:block;margin-top:4px}
+  .big{font-family:var(--serif);font-size:38px;color:var(--accent-dark);line-height:1.1;margin:4px 0 12px}
+  .note{font-size:12px;color:var(--muted);margin-bottom:22px}
+  .link{margin-top:auto;font-size:12.5px;color:var(--ink);border-bottom:1px solid var(--ink);align-self:flex-start;padding-bottom:2px;display:inline-flex;gap:10px;align-items:center}
+
+  /* ABOUT / CONTACT */
+  .about{background:var(--bg-alt);padding:46px 0 52px}
+  .about-grid{display:grid;grid-template-columns:.8fr 1.4fr 1.1fr;gap:34px;align-items:center}
+  .about-art svg{width:100%;height:auto;display:block}
+  .about h2{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.15;color:var(--ink);margin:12px 0 14px}
+  .about p{font-size:13.5px;color:var(--muted);margin-bottom:16px}
+  .small-link{font-size:12px;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;display:inline-flex;gap:10px;align-items:center}
+  .contact{border-left:1px solid var(--line);padding-left:42px}
+  .contact h2{font-size:25px}
+  .contact p{max-width:260px}
+  .social{display:flex;gap:30px;margin-top:22px}
+  .social a{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;color:var(--ink)}
+  .social a:hover{color:var(--accent)}
+  .social svg{width:18px;height:18px}
+
+  footer{background:var(--bg-alt);border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;padding:20px 0;font-size:11px;color:var(--muted);gap:16px;flex-wrap:wrap}
+  .foot nav{padding:0;gap:0}
+  .foot a{margin-left:10px}
+  .foot a::before{content:"·";margin-right:10px}
+  .foot a:first-child::before{content:none}
+  .dot::before{content:"·";margin:0 10px}
+
+  .hand{font-family:var(--hand);fill:var(--ink)}
+
+  /* RESPONSIVO */
+  @media (max-width:900px){
+    .hero,.section-head,.grid,.about-grid{grid-template-columns:1fr}
+    .hero{padding-top:20px}
+    .menu{display:none}
+    nav{justify-content:space-between}
+    .about-art{max-width:200px}
+    .contact{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:30px}
+  }
+  @media (max-width:520px){
+    .stats{grid-template-columns:1fr;gap:14px}
+    .stat{border-right:0;border-bottom:1px solid #dcc9b5;padding:0 14px 12px}
+    .stat:last-child{border-bottom:0;padding-bottom:0}
+    .nav-cta{font-size:12px}
+  }
+</style>
+</head>
+<body>
+
+<!-- SETA REUTILIZÁVEL -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arrow" viewBox="0 0 16 10"><path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header id="inicio">
+  <div class="container">
+    <nav>
+      <a href="#inicio" class="logo">APS</a>
+      <div class="menu">
+        <a href="#inicio" class="active">Início</a>
+        <a href="#cases">Cases</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <a href="#contato" class="nav-cta">Vamos conversar <svg class="arrow"><use href="#arrow"/></svg></a>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">
+          <svg viewBox="0 0 56 10"><path d="M1 8 C18 3 34 2 55 2" stroke="#b5532f" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          Produto · Processos · Pessoas
+        </div>
+        <h1>Tecnologia, processos e pessoas para resolver problemas reais.</h1>
+        <p>Sou Product Owner, com mais de 20 anos de experiência em TI e 4 anos atuando em produto, conectando negócio e tecnologia para gerar soluções viáveis e sustentáveis.</p>
+        <a href="#cases" class="btn">Conheça meus cases <svg class="arrow"><use href="#arrow"/></svg></a>
+      </div>
+
+      <div class="hero-art">
+        <svg viewBox="0 0 560 420" role="img" aria-label="Ilustração: discovery, pessoas, processos, integrações e resultados">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1l8 4-8 4" fill="none" stroke="#4a1c1c" stroke-width="1.3" stroke-linecap="round"/></marker>
+          </defs>
+          <!-- manchas de fundo -->
+          <path d="M60 80 C120 20 300 30 420 40 C520 50 560 130 540 230 C520 330 420 380 300 370 C180 365 60 380 30 290 C10 220 10 130 60 80Z" fill="#efdcc8" opacity=".75"/>
+          <path d="M470 110 C500 90 540 85 550 100 C545 150 520 190 490 220 C470 190 455 140 470 110Z" fill="#c8704a"/>
+          <path d="M60 290 C100 250 170 270 200 300 C190 340 120 370 70 345 C50 330 48 305 60 290Z" fill="#ecd5bf"/>
+
+          <!-- lâmpada -->
+          <g stroke="#4a1c1c" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M82 92 C62 92 52 110 52 124 C52 140 62 146 68 156 L68 166 L96 166 L96 156 C102 146 112 140 112 124 C112 110 102 92 82 92Z" fill="#f6dfb3"/>
+            <path d="M70 172h24M73 179h18"/>
+            <path d="M82 120v28M72 128l10-8 10 8"/>
+            <path d="M82 70v-14M52 82l-12-9M112 82l12-9M40 112H26M124 112h14"/>
+          </g>
+          <text class="hand" x="150" y="78" font-size="24" transform="rotate(-4 150 78)">Discovery</text>
+          <path d="M122 112 C150 120 170 118 190 108" stroke="#4a1c1c" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+
+          <!-- janela / formulário -->
+          <g stroke="#4a1c1c" stroke-width="1.6" fill="#faf3ea" stroke-linejoin="round" stroke-linecap="round">
+            <rect x="210" y="90" width="120" height="76" rx="3"/>
+            <path d="M210 104h120" fill="none"/>
+            <circle cx="220" cy="97" r="1.5" fill="#4a1c1c"/><circle cx="227" cy="97" r="1.5" fill="#4a1c1c"/><circle cx="234" cy="97" r="1.5" fill="#4a1c1c"/>
+            <rect x="222" y="116" width="10" height="10" fill="none"/><rect x="222" y="138" width="10" height="10" fill="none"/>
+            <path d="M242 120h72M242 128h60M242 142h72M242 150h52" fill="none"/>
+          </g>
+          <path d="M342 126 C360 126 372 126 388 126" stroke="#4a1c1c" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+
+          <!-- pessoas -->
+          <g stroke="#4a1c1c" stroke-width="1.6" stroke-linejoin="round">
+            <circle cx="420" cy="104" r="11" fill="#e7a56f"/>
+            <circle cx="448" cy="100" r="11" fill="#d9894f"/>
+            <circle cx="476" cy="108" r="10" fill="#e7a56f"/>
+            <path d="M402 150c0-20 10-30 20-30s22 10 22 30z" fill="#e7a56f"/>
+            <path d="M432 148c0-22 10-34 22-34s22 12 22 34z" fill="#d9894f"/>
+            <path d="M460 150c0-18 8-26 18-26s18 8 18 26z" fill="#e7a56f"/>
+          </g>
+          <text class="hand" x="440" y="190" font-size="22" transform="rotate(-6 440 190)">Pessoas</text>
+          <path d="M500 140 C520 160 520 190 502 212" stroke="#4a1c1c" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+
+          <!-- notebook com gráficos -->
+          <g stroke="#4a1c1c" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+            <rect x="92" y="212" width="116" height="80" rx="5" fill="#f1c88f"/>
+            <rect x="100" y="220" width="100" height="64" rx="2" fill="#faf3ea"/>
+            <path d="M82 296h136l-8 12H90z" fill="#faf3ea"/>
+            <path d="M108 230h30M108 238h24M108 246h30" fill="none"/>
+            <rect x="146" y="256" width="9" height="22" fill="#c8704a"/>
+            <rect x="160" y="246" width="9" height="32" fill="#a8452c"/>
+            <rect x="174" y="238" width="9" height="40" fill="#7a2323"/>
+            <circle cx="182" cy="236" r="0" />
+            <path d="M104 276h84" fill="none"/>
+          </g>
+
+          <!-- engrenagem -->
+          <g transform="translate(262 252)" stroke="#4a1c1c" stroke-width="1.6" stroke-linejoin="round" fill="#e08a52">
+            <path d="M-6 -30h12l3 9 8 3 9-5 8 8-5 9 3 8 9 3v12l-9 3-3 8 5 9-8 8-9-5-8 3-3 9h-12l-3-9-8-3-9 5-8-8 5-9-3-8-9-3v-12l9-3 3-8-5-9 8-8 9 5 8-3z" transform="scale(.9)"/>
+            <circle r="13" fill="#faf3ea"/>
+          </g>
+
+          <!-- fluxograma -->
+          <g stroke="#4a1c1c" stroke-width="1.6" fill="#faf3ea" stroke-linejoin="round" stroke-linecap="round">
+            <rect x="394" y="270" width="52" height="30" rx="3"/>
+            <rect x="352" y="292" width="30" height="30" rx="3"/>
+            <path d="M382 308h10M420 300v14h26" fill="none"/>
+            <path d="M360 300l10 12M360 312l10-12" stroke="#c8704a" fill="none"/>
+          </g>
+          <text class="hand" x="418" y="338" font-size="22" transform="rotate(-6 418 338)">Processos</text>
+
+          <!-- quebra-cabeça -->
+          <g stroke="#4a1c1c" stroke-width="1.6" stroke-linejoin="round" fill="#d9894f">
+            <path d="M82 366v-22h12c-4-10 12-14 12 0h12v22h-12c4 10-12 10-12 0z"/>
+            <path d="M118 366v-22h12c-4-10 12-14 12 0h12v22h-12c4 10-12 10-12 0z" fill="#a8452c"/>
+          </g>
+          <text class="hand" x="48" y="408" font-size="22" transform="rotate(-8 48 408)">Integrações</text>
+          <path d="M184 360 C220 350 250 355 272 372" stroke="#4a1c1c" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+
+          <!-- barras resultados -->
+          <g stroke="#4a1c1c" stroke-width="1.5" stroke-linejoin="round">
+            <rect x="302" y="368" width="14" height="36" fill="#e7a56f"/>
+            <rect x="324" y="352" width="14" height="52" fill="#d9894f"/>
+            <rect x="346" y="336" width="14" height="68" fill="#b5532f"/>
+            <rect x="368" y="320" width="14" height="84" fill="#7a2323"/>
+          </g>
+          <path d="M296 346 C316 338 330 326 344 316" stroke="#4a1c1c" stroke-width="1.4" fill="none" marker-end="url(#ah)"/>
+          <text class="hand" x="318" y="428" font-size="22" transform="rotate(-6 318 428)">Resultados</text>
+          <path d="M412 388 C440 384 458 372 472 360" stroke="#4a1c1c" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+
+          <text class="hand" font-size="21" transform="rotate(-8 490 330)">
+            <tspan x="492" y="330">Melhores</tspan><tspan x="494" y="352">soluções,</tspan><tspan x="496" y="374">maior</tspan><tspan x="498" y="396">impacto.</tspan>
+          </text>
+          <path d="M498 408 C520 404 540 402 556 400" stroke="#b5532f" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </section>
+  </div>
+</header>
+
+<main>
+  <!-- CASES -->
+  <section class="cases" id="cases">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow" style="font-size:10.5px">Cases em destaque
+            <svg viewBox="0 0 56 10" style="width:50px"><path d="M0 5h54" stroke="#b5532f" stroke-width="1"/></svg>
+          </div>
+          <h2>Projetos que geraram impacto real</h2>
+        </div>
+        <p>Aqui você encontra alguns dos projetos em que atuei com foco em resolver problemas, melhorar processos e conectar necessidades de negócio às soluções tecnológicas.</p>
+      </div>
+
+      <div class="grid">
+        <!-- Case 01 -->
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 420 140" role="img" aria-label="Ilustração de automação de processos">
+              <defs><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1l8 4-8 4" fill="none" stroke="#4a1c1c" stroke-width="1.3"/></marker></defs>
+              <rect width="420" height="140" fill="#f3e3d1"/>
+              <path d="M330 0h90v60c-30 10-70-10-90-60z" fill="#b5532f"/>
+              <g stroke="#4a1c1c" stroke-width="1.5" fill="#faf3ea" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="50" y="22" width="62" height="82" rx="2"/>
+                <path d="M60 40h40M60 52h30M60 64h40M60 76h26" fill="none"/>
+                <circle cx="60" cy="40" r="0"/>
+              </g>
+              <path d="M124 64h30" stroke="#4a1c1c" stroke-width="1.5" marker-end="url(#ah2)"/>
+              <g transform="translate(190 62)" stroke="#4a1c1c" stroke-width="1.5" fill="#e08a52" stroke-linejoin="round">
+                <path d="M-5 -28h10l3 8 7 3 8-4 7 7-4 8 3 7 8 3v10l-8 3-3 7 4 8-7 7-8-4-7 3-3 8h-10l-3-8-7-3-8 4-7-7 4-8-3-7-8-3v-10l8-3 3-7-4-8 7-7 8 4 7-3z" transform="scale(.9)"/>
+                <circle r="11" fill="#faf3ea"/>
+              </g>
+              <path d="M232 62h30" stroke="#4a1c1c" stroke-width="1.5" marker-end="url(#ah2)"/>
+              <g stroke="#4a1c1c" stroke-width="1.5" fill="#faf3ea">
+                <ellipse cx="288" cy="40" rx="18" ry="7"/>
+                <path d="M270 40v34c0 4 8 7 18 7s18-3 18-7V40M270 57c0 4 8 7 18 7s18-3 18-7" fill="none"/>
+              </g>
+              <path d="M310 78 C330 82 340 92 336 102" stroke="#4a1c1c" stroke-width="1.5" fill="none" marker-end="url(#ah2)"/>
+              <rect x="330" y="100" width="50" height="32" rx="2" fill="#faf3ea" stroke="#4a1c1c" stroke-width="1.5"/>
+              <path d="M340 110h12M358 110h12M340 122h12M358 122h12" stroke="#4a1c1c" stroke-width="1.5"/>
+              <path d="M130 120 C170 130 210 122 240 108" stroke="#4a1c1c" stroke-width="1.4" fill="none" marker-end="url(#ah2)"/>
+            </svg>
+          </div>
+          <div class="tag">01 · Base2 Tecnologia</div>
+          <h3>Automatizar melhor começa por entender o processo</h3>
+          <p class="desc">Gestão de portfólio, análise de processos e integração entre negócio e tecnologia.</p>
+          <div class="stats">
+            <div class="stat"><strong>150</strong><span>automações no<br>portfólio</span></div>
+            <div class="stat"><strong>17</strong><span>novas automações<br>para a Contabilidade</span></div>
+            <div class="stat"><strong>70 <small>h/mês</small></strong><span>estimadas</span></div>
+          </div>
+          <a href="#" class="link">Ver case completo <svg class="arrow"><use href="#arrow"/></svg></a>
+        </article>
+
+        <!-- Case 02 -->
+        <article class="card">
+          <div class="thumb">
+            <svg viewBox="0 0 420 140" role="img" aria-label="Ilustração de fluxo de entrega">
+              <rect width="420" height="140" fill="#f3e3d1"/>
+              <circle cx="385" cy="115" r="14" fill="#e7a56f" opacity=".8"/>
+              <g stroke="#4a1c1c" stroke-width="1.5" fill="none">
+                <rect x="14" y="10" width="226" height="120"/>
+                <path d="M90 10v120M165 10v120"/>
+              </g>
+              <g stroke="#4a1c1c" stroke-width="1.2">
+                <rect x="24" y="22" width="56" height="20" fill="#b5532f"/>
+                <rect x="24" y="48" width="56" height="22" fill="#faf3ea"/><path d="M32 56h40M32 63h30" fill="none"/>
+                <rect x="24" y="78" width="56" height="20" fill="#a8452c"/>
+                <rect x="100" y="22" width="56" height="20" fill="#d9894f"/>
+                <rect x="100" y="48" width="56" height="22" fill="#faf3ea"/><path d="M108 56h40M108 63h30" fill="none"/>
+                <rect x="100" y="78" width="56" height="20" fill="#faf3ea"/><path d="M108 86h40M108 92h30" fill="none"/>
+                <rect x="175" y="22" width="56" height="22" fill="#b5532f"/>
+                <rect x="175" y="52" width="56" height="22" fill="#faf3ea"/><path d="M183 60h40M183 67h30" fill="none"/>
+                <rect x="175" y="82" width="56" height="20" fill="#7a2323"/>
+              </g>
+              <g stroke="#4a1c1c" stroke-width="1.5">
+                <rect x="296" y="70" width="12" height="44" fill="#e7a56f"/>
+                <rect x="316" y="56" width="12" height="58" fill="#d9894f"/>
+                <rect x="336" y="38" width="12" height="76" fill="#b5532f"/>
+                <rect x="356" y="22" width="12" height="92" fill="#7a2323"/>
+              </g>
+              <path d="M270 60 C290 54 310 44 340 18" stroke="#4a1c1c" stroke-width="1.4" fill="none"/>
+              <path d="M330 18h12v12" stroke="#4a1c1c" stroke-width="1.4" fill="none"/>
+              <g stroke="#4a1c1c" stroke-width="1.5" fill="#faf3ea"><circle cx="385" cy="115" r="14"/><path d="M385 106v9l6 4" fill="none"/></g>
+            </svg>
+          </div>
+          <div class="tag">02 · CWI Software</div>
+          <h3>De 85 para 24 dias: melhorando o fluxo de entrega</h3>
+          <p class="desc">Melhoria do fluxo de trabalho, gestão de bloqueios e melhoria contínua em um projeto de pagamentos via Pix.</p>
+          <div class="big">85 → 24 dias</div>
+          <p class="note">Comparação dos tempos máximos observados,<br>ao longo de aproximadamente seis meses de ajustes.</p>
+          <a href="#" class="link">Ver case completo <svg class="arrow"><use href="#arrow"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE + CONTATO -->
+  <section class="about" id="sobre">
+    <div class="container about-grid">
+      <div class="about-art">
+        <svg viewBox="0 0 200 220" aria-hidden="true">
+          <path d="M0 20 A80 80 0 0 1 0 190Z" fill="#c8704a" transform="translate(0 -6)"/>
+          <circle cx="102" cy="48" r="26" fill="#6e1f1f"/>
+          <path d="M70 200 C70 140 130 110 190 100 C190 150 150 200 70 200Z" fill="#ecd5bf"/>
+          <path d="M175 70 C170 130 130 170 80 210" stroke="#4a1c1c" stroke-width="1.3" fill="none"/>
+        </svg>
+      </div>
+
+      <div>
+        <div class="eyebrow" style="font-size:10px">Sobre mim
+          <svg viewBox="0 0 56 10" style="width:40px"><path d="M0 5h54" stroke="#b5532f" stroke-width="1"/></svg>
+        </div>
+        <h2>Uma trajetória entre negócios, tecnologia e pessoas.</h2>
+        <p>Minha experiência passa por diferentes áreas e projetos, sempre com o mesmo foco: entender o que realmente importa, organizar o processo e buscar soluções que façam sentido para quem usa e para o negócio.</p>
+        <a href="#" class="small-link">Saiba mais sobre mim <svg class="arrow"><use href="#arrow"/></svg></a>
+      </div>
+
+      <div class="contact" id="contato">
+        <div class="eyebrow" style="font-size:10px">Vamos conversar</div>
+        <h2>Estou aberta a novas conexões.</h2>
+        <p>Se quiser trocar ideias, tirar dúvidas ou saber mais sobre o meu trabalho, será um prazer conversar.</p>
+        <div class="social">
+          <!-- TROQUE os links abaixo pelos seus -->
+          <a href="https://www.linkedin.com/in/anapsimao" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#4a1c1c"/><path d="M6.2 9.5h2.6V18H6.2zM7.5 5.6a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10.5 9.5H13v1.2c.4-.7 1.3-1.4 2.700-1.400 2.700 0 3.200 1.800 3.200 4.100V18h-2.600v-3.900c0-1 0-2.200-1.400-2.200s-1.600 1-1.600 2.100V18h-2.600z" fill="#f6efe6"/></svg>
+            LinkedIn
+          </a>
+          <a href="mailto:appaulas@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#4a1c1c" stroke-width="1.6" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg>
+            E-mail
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div>APS <span class="dot"></span> Portfólio</div>
+    <nav>
+      <a href="#cases">Cases</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
