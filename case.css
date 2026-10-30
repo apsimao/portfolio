@@ -57,6 +57,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0
 .content{padding:50px 0 30px}
 .block{margin-bottom:42px}
 .block h2{font-family:var(--serif);font-weight:500;font-size:30px;color:var(--ink);line-height:1.15;margin-bottom:14px}
+.block h3{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--ink);line-height:1.2;margin:22px 0 10px}
 .block p{margin-bottom:12px}
 .block ul{padding-left:20px}
 .block li{margin-bottom:8px}
