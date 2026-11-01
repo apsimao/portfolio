@@ -3,12 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case Base2 Tecnologia · APS</title>
-<meta name="description" content="Gestão de portfólio, análise de processos e integração entre negócio e tecnologia na Base2 Tecnologia.">
+<title>Case Base2 Tecnologia · Ana Paula Simão</title>
+<meta name="description" content="Gestão de portfólio, análise de processos e conexão entre negócio e tecnologia: 150 automações no portfólio e 17 novas entregues para a Contabilidade.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="case.css">
+<style>
+  :root{
+    --bg:#faf0e6;
+    --bg-soft:#f3e4d6;
+    --ink:#4a1c1c;
+    --red:#7a2323;
+    --accent:#b5532f;
+    --text:#5b4a44;
+    --muted:#7a6a63;
+    --line:#e2c9b4;
+    --peach:#f8dcc4;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* MENU */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:20px}
+  .logo{font-family:var(--serif);font-size:36px;color:var(--ink);letter-spacing:.5px;line-height:1}
+  .menu{display:flex;gap:30px;margin-left:36px;margin-right:auto}
+  .menu a{font-size:13.5px;color:var(--ink);padding-bottom:4px;border-bottom:1.5px solid transparent}
+  .menu a.active{border-color:var(--red)}
+  .menu a:hover{border-color:var(--accent)}
+  .nav-cta{font-size:13px;color:var(--red);border-bottom:1px solid var(--red);padding-bottom:3px;display:inline-flex;gap:10px;align-items:center}
+  .arrow{display:inline-block;width:16px;height:10px}
+
+  /* TÍTULOS DE SEÇÃO */
+  .label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:500;display:flex;align-items:center;gap:14px}
+  .label::after{content:"";width:46px;height:1px;background:var(--accent)}
+  h1,h2{font-family:var(--serif);font-weight:500;color:var(--red);line-height:1.08}
+
+  /* TOPO */
+  .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding:22px 0 40px}
+  .hero h1{font-size:clamp(40px,5.6vw,62px);margin:18px 0 20px}
+  .hero .sub{font-weight:500;color:var(--ink);margin-bottom:14px}
+  .hero p{max-width:440px}
+  .hero-art svg{width:100%;height:auto;display:block;max-width:420px;margin-left:auto}
+
+  /* NÚMEROS */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg-soft);border-radius:14px;padding:26px 14px}
+  .stat{padding:0 34px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat strong{display:block;font-family:var(--serif);font-weight:500;font-size:50px;color:var(--red);line-height:1}
+  .stat strong small{font-size:28px}
+  .stat span{display:block;color:var(--ink);margin-top:6px;font-size:14.5px}
+
+  /* DESAFIO + ABORDAGEM */
+  .two{display:grid;grid-template-columns:1fr 1.15fr;margin-top:50px}
+  .two > div:first-child{padding-right:48px;border-right:1px solid var(--line)}
+  .two > div:last-child{padding-left:48px}
+  .two h2{font-size:clamp(32px,4vw,40px);margin:14px 0 18px}
+  .two p{font-size:16.5px;line-height:1.7}
+  .approach{display:flex;flex-direction:column;gap:20px}
+  .item{display:flex;gap:18px;align-items:flex-start}
+  .icon{flex:0 0 66px;height:66px;border-radius:50%;background:var(--peach);display:grid;place-items:center}
+  .icon svg{width:32px;height:32px;stroke:var(--red);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .item h3{font-family:var(--serif);font-weight:600;font-size:21px;color:var(--red);line-height:1.2;margin-bottom:4px}
+  .item p{font-size:13.5px;line-height:1.55;color:var(--muted)}
+
+  /* DECISÕES */
+  .decisions{margin-top:54px}
+  .decisions h2{font-size:clamp(30px,4.2vw,42px);margin:12px 0 22px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .dcard{background:var(--bg-soft);border-radius:12px;padding:22px 24px}
+  .dcard h3{font-family:var(--serif);font-weight:600;font-size:21px;color:var(--red);line-height:1.2;margin-bottom:8px}
+  .dcard p{font-size:13.5px;color:var(--muted);line-height:1.55}
+
+  /* RESULTADOS */
+  .results{margin:54px 0 60px;background:var(--bg-soft);border-radius:22px;padding:36px 40px;display:grid;grid-template-columns:1.8fr 1fr;gap:0}
+  .results .main{padding-right:40px;border-right:1px solid var(--line)}
+  .results h2{font-size:clamp(30px,4vw,40px);margin:12px 0 18px}
+  .kpi{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+  .kpi .num{font-family:var(--serif);font-size:clamp(54px,7vw,76px);color:var(--red);line-height:1;white-space:nowrap}
+  .kpi .num small{font-size:.55em}
+  .kpi p{border-left:1px solid var(--line);padding-left:26px;color:var(--ink);max-width:280px;font-size:14.5px}
+  .results .foot-note{margin-top:20px;font-size:14px;color:var(--ink)}
+  .next{padding-left:40px;display:flex;flex-direction:column;justify-content:center}
+  .next .label::after{display:none}
+  .next h3{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3vw,32px);color:var(--red);line-height:1.1;margin:14px 0 20px}
+  .next a{font-size:13px;color:var(--red);border-bottom:1px solid var(--red);padding-bottom:3px;align-self:flex-start;display:inline-flex;gap:10px;align-items:center}
+
+  footer{border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;padding:20px 0;font-size:11.5px;color:var(--muted);gap:16px;flex-wrap:wrap}
+  .foot a{margin-left:14px}
+
+  /* RESPONSIVO */
+  @media (max-width:900px){
+    .menu{display:none}
+    .hero,.two,.results{grid-template-columns:1fr}
+    .hero-art svg{margin:0 auto;max-width:320px}
+    .two > div:first-child{padding-right:0;border-right:0;border-bottom:1px solid var(--line);padding-bottom:34px;margin-bottom:34px}
+    .two > div:last-child{padding-left:0}
+    .cards{grid-template-columns:1fr}
+    .results{padding:30px 24px}
+    .results .main{padding-right:0;border-right:0;border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:28px}
+    .next{padding-left:0}
+  }
+  @media (max-width:620px){
+    .stats{grid-template-columns:1fr;gap:18px}
+    .stat{border-right:0;border-bottom:1px solid var(--line);padding:0 18px 16px}
+    .stat:last-child{border-bottom:0;padding-bottom:0}
+    .kpi p{border-left:0;padding-left:0}
+  }
+</style>
 </head>
 <body>
 
@@ -16,124 +123,138 @@
   <symbol id="arrow" viewBox="0 0 16 10"><path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
-<header>
-  <div class="container">
-    <nav>
-      <a href="index.html" class="logo">APS</a>
-      <div class="menu">
-        <a href="index.html">Início</a>
-        <a href="index.html#cases" class="active">Cases</a>
-        <a href="index.html#sobre">Sobre mim</a>
-        <a href="index.html#contato">Contato</a>
-		<a href="curriculo-ana-paula-simao.pdf" download="Curriculo-Ana-Paula-Simao.pdf">Currículo</a>
-      </div>
-      <a href="index.html#contato" class="nav-cta">Vamos conversar <svg class="arrow"><use href="#arrow"/></svg></a>
-    </nav>
+<div class="container">
+  <nav>
+    <a href="index.html" class="logo">APS</a>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="index.html#cases" class="active">Cases</a>
+      <a href="index.html#sobre">Sobre mim</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="curriculo-ana-paula-simao.pdf" download="Curriculo-Ana-Paula-Simao.pdf">Currículo</a>
+    </div>
+    <a href="index.html#contato" class="nav-cta">Vamos conversar <svg class="arrow"><use href="#arrow"/></svg></a>
+  </nav>
 
-    <section class="case-hero">
-      <a href="index.html#cases" class="back"><svg class="arrow"><use href="#arrow"/></svg> Voltar aos cases</a>
-      <div class="eyebrow">01 · Base2 Tecnologia</div>
+  <!-- TOPO -->
+  <section class="hero">
+    <div>
+      <div class="label">Base2 Tecnologia</div>
       <h1>Automatizar melhor começa por entender o processo</h1>
-      <p class="lead">Eu acompanhava um portfólio de cerca de 150 automações utilizadas em diferentes áreas da empresa e, na Contabilidade, conduzi a entrega de 17 novas automações em um ano. Meu trabalho envolvia equilibrar novas demandas, problemas operacionais e prazos legais, além de analisar processos e identificar oportunidades para reduzir o trabalho manual e melhorar a operação.</p>
-    </section>
-  </div>
-</header>
+      <p class="sub">Gestão de portfólio · Análise de processos · Negócio e tecnologia</p>
+      <p>Eu acompanhava um portfólio de cerca de 150 automações utilizadas em diferentes áreas da empresa e, na Contabilidade, conduzi a entrega de 17 novas automações em um ano.</p>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 420 340" role="img" aria-label="Ilustração de fluxo de processo com etapa concluída">
+        <path d="M60 110 C90 40 220 30 330 55 C410 75 430 160 400 230 C370 300 260 330 170 310 C90 292 30 230 60 110Z" fill="#f8d9bd" opacity=".85"/>
+        <path d="M150 190 C190 130 300 120 380 150 C420 200 380 270 300 290 C220 305 120 270 150 190Z" fill="#f4c7a2" opacity=".7"/>
+        <g stroke="#4a1c1c" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="150" y="62" width="96" height="44" rx="2"/>
+          <path d="M172 84h52"/>
+          <path d="M198 106v34M92 140h213M92 140v26M198 140v26M305 140v26"/>
+          <rect x="62" y="166" width="62" height="46" rx="2"/>
+          <rect x="167" y="166" width="62" height="46" rx="2"/>
+          <rect x="274" y="166" width="62" height="46" rx="2"/>
+          <path d="M80 190h26M185 190h26M292 190h26"/>
+          <path d="M270 40 C330 24 390 60 392 118"/>
+        </g>
+        <circle cx="330" cy="224" r="30" fill="#fbeee0" stroke="#4a1c1c" stroke-width="2"/>
+        <path d="M316 224l10 10 18-22" stroke="#4a1c1c" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
 
-<main>
-  <section class="highlight">
-    <div class="container">
-      <div class="stats">
-        <div class="stat"><strong>150</strong><span>automações no portfólio</span></div>
-        <div class="stat"><strong>17</strong><span>novas automações para a Contabilidade</span></div>
-        <div class="stat"><strong>70 <small>h/mês</small></strong><span>economizadas</span></div>
+  <!-- NÚMEROS -->
+  <section class="stats">
+    <div class="stat"><strong>150</strong><span>automações no portfólio</span></div>
+    <div class="stat"><strong>17</strong><span>novas na Contabilidade</span></div>
+    <div class="stat"><strong>70 <small>h/mês</small></strong><span>economizadas</span></div>
+  </section>
+
+  <!-- DESAFIO + ABORDAGEM -->
+  <section class="two">
+    <div>
+      <div class="label">01 — O desafio</div>
+      <h2>O desafio</h2>
+      <p>Automações apoiavam atividades importantes em diferentes áreas. Falhas exigiam trabalho manual, enquanto novas demandas precisavam ser avaliadas sem comprometer a operação existente.</p>
+    </div>
+
+    <div>
+      <div class="label">02 — Como conduzi o trabalho</div>
+      <h2>Minha abordagem</h2>
+      <div class="approach">
+        <div class="item">
+          <div class="icon"><svg viewBox="0 0 32 32"><path d="M5 8l2 2 4-4M5 16l2 2 4-4M5 24l2 2 4-4M16 8h11M16 16h11M16 24h11"/></svg></div>
+          <div>
+            <h3>Priorizar considerando a operação</h3>
+            <p>Tempo manual, pessoas envolvidas, complexidade, prazos e continuidade.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="4.5"/><path d="M14 4h4l.8 3.2 2.6 1.1 2.8-1.7 2.8 2.8-1.7 2.8 1.1 2.6L28 15v4l-3.2.8-1.1 2.6 1.7 2.8-2.8 2.8-2.8-1.7-2.6 1.1L18 28h-4l-.8-3.2-2.6-1.1-2.8 1.7-2.8-2.8 1.7-2.8-1.1-2.6L4 18v-4l3.200-.8 1.100-2.600-1.700-2.800 2.800-2.800 2.800 1.700 2.600-1.100z"/></svg></div>
+          <div>
+            <h3>Entender o processo antes de automatizar</h3>
+            <p>Análise das etapas e identificação de oportunidades para eliminar tarefas manuais.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="9" r="3.5"/><circle cx="7" cy="12" r="3"/><circle cx="25" cy="12" r="3"/><path d="M9 26c0-5 3-8 7-8s7 3 7 8zM2 24c0-3.500 2-5.500 5-5.500M30 24c0-3.500-2-5.500-5-5.500"/></svg></div>
+          <div>
+            <h3>Conectar negócio e tecnologia</h3>
+            <p>Requisitos, regras, alinhamentos, testes e acompanhamento das execuções.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="content">
-    <div class="narrow">
-
-      <!--
-        COMO EDITAR: troque o texto dentro das caixas <div class="todo"> pelo seu texto real.
-        Depois de escrever, remova o class="todo" (fica só <div>) para sumir a borda tracejada.
-        Se algum bloco não fizer sentido, apague o <div class="block"> inteiro.
-      -->
-
-      <div class="block">
-        <h2>O desafio</h2>
-        <div>As automações apoiavam atividades importantes para a rotina das áreas, incluindo obrigações com prazos legais. Quando uma automação falhava, o trabalho precisava ser realizado manualmente, muitas vezes com pouco tempo disponível e possibilidade de horas extras.
-		Ao mesmo tempo, novas demandas chegavam de diferentes áreas, e nem sempre o caminho era simplesmente automatizar o processo como ele já existia. Havia oportunidades de rever etapas manuais, simplificar atividades e melhorar a forma como as pessoas acompanhavam as execuções.</div>
+  <!-- DECISÕES NA PRÁTICA -->
+  <section class="decisions">
+    <div class="label">03 — Decisões na prática</div>
+    <h2>Melhorias que partiram da análise dos processos</h2>
+    <div class="cards">
+      <div class="dcard">
+        <h3>01. Simplificação de planilhas</h3>
+        <p>Eliminação de etapas manuais na preparação dos dados para automação.</p>
       </div>
-
-      <div class="block">
-        <h2>Como conduzi o trabalho</h2>
-		<h3>Priorizar considerando a operação</h3>
-        <div><p>Na avaliação das novas demandas, considerava o tempo gasto nas atividades manuais, a quantidade de pessoas envolvidas e a complexidade do processo. Também buscava entregar soluções mais simples quando isso permitia resolver rapidamente um problema, sem deixar de lado demandas mais complexas.</p>
-		<p>Quando havia conflito entre uma nova entrega e uma falha em uma automação já utilizada pela área, priorizava a continuidade da operação. A automação existente fazia parte da rotina e, se não fosse restabelecida, alguém precisaria executar manualmente aquela atividade.</p>
-
-		<p>Os prazos legais também faziam parte dessa análise. Como as execuções eram programadas com antecedência, havia uma janela para identificar falhas e permitir que a área recorresse ao processo manual quando necessário.</p></div>
+      <div class="dcard">
+        <h3>02. Extração de dados de notas fiscais</h3>
+        <p>Investigação dos formatos dos documentos e definição da estratégia de extração.</p>
       </div>
-
-      <div class="block">
-        <h3>Entender o processo antes de automatizar</h3>
-        <div>Em algumas situações, a oportunidade de melhoria estava nas próprias etapas do processo.
-		<p></p>Em uma delas, uma pessoa precisava extrair uma planilha de um BI, remover colunas, consultar códigos de empresas a partir do CNPJ e preencher alíquotas conforme regras definidas. Analisei essas etapas com o time e identificamos que parte das informações poderia ser obtida diretamente pela automação, enquanto outras tarefas poderiam ser eliminadas.</p>
-		<p>Com a mudança, a pessoa deixou de gastar tempo nessas alterações manuais e pôde se dedicar a outras atividades. A extração inicial da planilha permaneceu necessária devido às permissões disponíveis para a automação.<p>
-		<p><p>Em outro caso, a atividade envolvia ler informações de notas fiscais em PDF e transcrevê-las para uma planilha. Investiguei os diferentes formatos dos documentos e as variações na apresentação das informações, detalhei os requisitos para o time de desenvolvimento e acompanhei a implementação e os testes. A automação passou a extrair os dados, com uma etapa de conferência pela área antes de seguir o processamento.</p></p>		
-		</div>
+      <div class="dcard">
+        <h3>03. Visibilidade das execuções</h3>
+        <p>Padronização de e-mails e relatório mensal para acompanhamento dos resultados.</p>
       </div>
-
-	  <div class="block">
-        <h3>Conectar negócio e tecnologia</h3>
-        <div> Eu era responsável por compreender o processo com a área de negócio e traduzir seu funcionamento, regras e exceções em requisitos para o time de desenvolvimento. Também esclarecia dúvidas durante a implementação, alinhava expectativas com os envolvidos e realizava os testes iniciais e o acompanhamento das primeiras execuções em produção.
-		<p><p>Quando os erros se repetiam, investigava suas causas para entender se estavam relacionados a mudanças em sites de prefeituras, alterações em rotinas do ERP, configurações de negócio ou problemas técnicos.</p></p>
-		<p><p>Essa análise ajudava a identificar oportunidades de atuação. Em situações de mudanças nos sites, por exemplo, trabalhamos em duas frentes: orientar a área a verificar os sites alguns dias antes da execução e prever validações na automação para identificar alterações em funções ou campos e alertar as equipes envolvidas.</p></p>
-		</div>
-      </div>
-
-	  <div class="block">
-        <h3>Dar visibilidade às execuções</h3>
-        <div> Antes, as pessoas precisavam consultar sites de prefeituras ou pastas de rede para verificar se os arquivos haviam sido gerados. Quando não encontravam o resultado esperado, acionavam o time de desenvolvimento.
-			 <p><p>Criei e padronizei e-mails enviados após as execuções, com planilhas que mostravam os resultados por item, empresa ou obrigação, conforme o tipo de automação. Assim, as áreas passaram a receber informações sobre o que havia sido processado e quais itens apresentavam erros, podendo agir sem depender apenas de consultas manuais ou de contatos com os desenvolvedores.</p></p>
-			<p><p>Também elaborei um relatório mensal para a gestão, com o volume de execuções, sucessos e falhas e a classificação das causas identificadas. O objetivo era dar visibilidade ao funcionamento do portfólio e apoiar a identificação de oportunidades de melhoria.</p></p>
-		</div>
-      </div>
-
-      <div class="block">
-        <h2>Resultados</h2>
-        <ul>
-  		   <li><strong>17 novas automações entregues em um ano</strong> para a Contabilidade.</li>
-		  <li><strong>Cerca de 70 horas mensais de trabalho manual economizadas</strong>, em estimativa baseada no tempo informado pelas pessoas responsáveis pelas atividades automatizadas.</li>
-		  <li><strong>Portfólio de aproximadamente 150 automações</strong> utilizadas em diferentes áreas da empresa, com acompanhamento de execuções, falhas e necessidades de sustentação.</li>
-		  <li><strong>Mais visibilidade para as áreas de negócio</strong> sobre os resultados das execuções e os itens que exigiam intervenção.</li>
-		  <li><strong>Redução de etapas manuais em processos específicos</strong>, liberando tempo das pessoas para outras atividades.</li>
-		</ul>
-      </div>
-
-      <div class="block">
-        <h2>O que esse trabalho exigiu</h2>
-        <div>Mais do que detalhar funcionalidades, o trabalho exigia entender como as atividades aconteciam na prática, distinguir o que precisava ser mantido do que poderia ser simplificado e equilibrar novas entregas com a continuidade da operação. Minha contribuição estava em transformar problemas do dia a dia em melhorias viáveis, conectando as necessidades das áreas às possibilidades técnicas do time.</div>
-      </div>
-
     </div>
   </section>
 
-  <section class="next">
-    <div class="container wrap">
-      <a href="index.html#cases" class="prev"><span><small>Voltar</small>Todos os cases</span> <svg class="arrow"><use href="#arrow"/></svg></a>
-      <a href="case-cwi.html"><span><small>Próximo case</small>De 85 para 24 dias</span> <svg class="arrow"><use href="#arrow"/></svg></a>
+  <!-- RESULTADOS + PRÓXIMO CASE -->
+  <section class="results">
+    <div class="main">
+      <div class="label">04 — Resultados</div>
+      <h2>Impactos na operação</h2>
+      <div class="kpi">
+        <div class="num">70 <small>horas/mês</small></div>
+        <p>Estimativa de trabalho manual economizado pelas 17 novas automações da Contabilidade.</p>
+      </div>
+      <p class="foot-note">Mais visibilidade, eliminação de etapas manuais e acompanhamento do portfólio.</p>
+    </div>
+    <div class="next">
+      <div class="label">Próximo case</div>
+      <h3>De 85 para 24 dias: melhorando o fluxo de entrega</h3>
+      <a href="case-cwi.html">Ver case CWI Software <svg class="arrow"><use href="#arrow"/></svg></a>
     </div>
   </section>
-</main>
+</div>
 
 <footer>
   <div class="container foot">
-    <div>APS <span class="dot"></span> Portfólio</div>
-    <nav>
+    <div>Ana Paula Simão · Portfólio</div>
+    <div>
       <a href="index.html#cases">Cases</a>
       <a href="index.html#sobre">Sobre mim</a>
       <a href="index.html#contato">Contato</a>
-    </nav>
+    </div>
   </div>
 </footer>
 
