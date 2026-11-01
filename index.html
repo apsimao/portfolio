@@ -60,8 +60,21 @@
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px 20px 24px;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s}
   .card:hover{box-shadow:0 14px 30px rgba(74,28,28,.08);transform:translateY(-3px)}
-  .card .thumb{border-radius:6px;overflow:hidden;background:var(--sand)}
-  .card .thumb svg{display:block;width:100%;height:auto}
+  .card .thumb{
+      border-radius:6px;
+      overflow:hidden;
+      background:transparent;   /* mesmo fundo do card e da página */
+      display:flex;
+      justify-content:center;   /* centraliza na horizontal */
+      align-items:center;       /* centraliza na vertical */
+    }
+    .card .thumb svg,
+    .card .thumb img{
+      display:block;
+      max-width:100%;
+      height:auto;
+      margin:0 auto;
+    }
   .tag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin:22px 0 10px}
   .card h3{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.15;color:var(--ink);margin-bottom:14px}
   .card p.desc{font-size:13.5px;color:var(--muted);margin-bottom:18px}
