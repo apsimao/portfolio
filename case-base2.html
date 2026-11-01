@@ -25,6 +25,7 @@
         <a href="index.html#cases" class="active">Cases</a>
         <a href="index.html#sobre">Sobre mim</a>
         <a href="index.html#contato">Contato</a>
+		<a href="curriculo-ana-paula-simao.pdf" download="Curriculo-Ana-Paula-Simao.pdf">Currículo</a>
       </div>
       <a href="index.html#contato" class="nav-cta">Vamos conversar <svg class="arrow"><use href="#arrow"/></svg></a>
     </nav>
@@ -44,7 +45,7 @@
       <div class="stats">
         <div class="stat"><strong>150</strong><span>automações no portfólio</span></div>
         <div class="stat"><strong>17</strong><span>novas automações para a Contabilidade</span></div>
-        <div class="stat"><strong>70 <small>h/mês</small></strong><span>estimadas</span></div>
+        <div class="stat"><strong>70 <small>h/mês</small></strong><span>economizadas</span></div>
       </div>
     </div>
   </section>
@@ -60,39 +61,58 @@
 
       <div class="block">
         <h2>O desafio</h2>
-        <div class="todo">As automações apoiavam atividades importantes para a rotina das áreas, incluindo obrigações com prazos legais. Quando uma automação falhava, o trabalho precisava ser realizado manualmente, muitas vezes com pouco tempo disponível e possibilidade de horas extras.
-
-Ao mesmo tempo, novas demandas chegavam de diferentes áreas, e nem sempre o caminho era simplesmente automatizar o processo como ele já existia. Havia oportunidades de rever etapas manuais, simplificar atividades e melhorar a forma como as pessoas acompanhavam as execuções.</div>
+        <div>As automações apoiavam atividades importantes para a rotina das áreas, incluindo obrigações com prazos legais. Quando uma automação falhava, o trabalho precisava ser realizado manualmente, muitas vezes com pouco tempo disponível e possibilidade de horas extras.
+		Ao mesmo tempo, novas demandas chegavam de diferentes áreas, e nem sempre o caminho era simplesmente automatizar o processo como ele já existia. Havia oportunidades de rever etapas manuais, simplificar atividades e melhorar a forma como as pessoas acompanhavam as execuções.</div>
       </div>
 
       <div class="block">
         <h2>Como conduzi o trabalho</h2>
 		<h3>Priorizar considerando a operação</h3>
-        <div class="todo"><p>Na avaliação das novas demandas, considerava o tempo gasto nas atividades manuais, a quantidade de pessoas envolvidas e a complexidade do processo. Também buscava entregar soluções mais simples quando isso permitia resolver rapidamente um problema, sem deixar de lado demandas mais complexas.</p>
-
+        <div><p>Na avaliação das novas demandas, considerava o tempo gasto nas atividades manuais, a quantidade de pessoas envolvidas e a complexidade do processo. Também buscava entregar soluções mais simples quando isso permitia resolver rapidamente um problema, sem deixar de lado demandas mais complexas.</p>
 		<p>Quando havia conflito entre uma nova entrega e uma falha em uma automação já utilizada pela área, priorizava a continuidade da operação. A automação existente fazia parte da rotina e, se não fosse restabelecida, alguém precisaria executar manualmente aquela atividade.</p>
 
 		<p>Os prazos legais também faziam parte dessa análise. Como as execuções eram programadas com antecedência, havia uma janela para identificar falhas e permitir que a área recorresse ao processo manual quando necessário.</p></div>
       </div>
 
       <div class="block">
-        <h2>O que eu fiz</h2>
-        <div class="todo">[Escreva aqui, de preferência em tópicos: como analisou os processos, como geriu o portfólio das 150 automações, como conectou negócio e tecnologia.]</div>
+        <h3>Entender o processo antes de automatizar</h3>
+        <div>Em algumas situações, a oportunidade de melhoria estava nas próprias etapas do processo.
+		<p></p>Em uma delas, uma pessoa precisava extrair uma planilha de um BI, remover colunas, consultar códigos de empresas a partir do CNPJ e preencher alíquotas conforme regras definidas. Analisei essas etapas com o time e identificamos que parte das informações poderia ser obtida diretamente pela automação, enquanto outras tarefas poderiam ser eliminadas.</p>
+		<p>Com a mudança, a pessoa deixou de gastar tempo nessas alterações manuais e pôde se dedicar a outras atividades. A extração inicial da planilha permaneceu necessária devido às permissões disponíveis para a automação.<p>
+		<p><p>Em outro caso, a atividade envolvia ler informações de notas fiscais em PDF e transcrevê-las para uma planilha. Investiguei os diferentes formatos dos documentos e as variações na apresentação das informações, detalhei os requisitos para o time de desenvolvimento e acompanhei a implementação e os testes. A automação passou a extrair os dados, com uma etapa de conferência pela área antes de seguir o processamento.</p></p>		
+		</div>
+      </div>
+
+	  <div class="block">
+        <h3>Conectar negócio e tecnologia</h3>
+        <div> Eu era responsável por compreender o processo com a área de negócio e traduzir seu funcionamento, regras e exceções em requisitos para o time de desenvolvimento. Também esclarecia dúvidas durante a implementação, alinhava expectativas com os envolvidos e realizava os testes iniciais e o acompanhamento das primeiras execuções em produção.
+		<p><p>Quando os erros se repetiam, investigava suas causas para entender se estavam relacionados a mudanças em sites de prefeituras, alterações em rotinas do ERP, configurações de negócio ou problemas técnicos.</p></p>
+		<p><p>Essa análise ajudava a identificar oportunidades de atuação. Em situações de mudanças nos sites, por exemplo, trabalhamos em duas frentes: orientar a área a verificar os sites alguns dias antes da execução e prever validações na automação para identificar alterações em funções ou campos e alertar as equipes envolvidas.</p></p>
+		</div>
+      </div>
+
+	  <div class="block">
+        <h3>Dar visibilidade às execuções</h3>
+        <div> Antes, as pessoas precisavam consultar sites de prefeituras ou pastas de rede para verificar se os arquivos haviam sido gerados. Quando não encontravam o resultado esperado, acionavam o time de desenvolvimento.
+			 <p><p>Criei e padronizei e-mails enviados após as execuções, com planilhas que mostravam os resultados por item, empresa ou obrigação, conforme o tipo de automação. Assim, as áreas passaram a receber informações sobre o que havia sido processado e quais itens apresentavam erros, podendo agir sem depender apenas de consultas manuais ou de contatos com os desenvolvedores.</p></p>
+			<p><p>Também elaborei um relatório mensal para a gestão, com o volume de execuções, sucessos e falhas e a classificação das causas identificadas. O objetivo era dar visibilidade ao funcionamento do portfólio e apoiar a identificação de oportunidades de melhoria.</p></p>
+		</div>
       </div>
 
       <div class="block">
         <h2>Resultados</h2>
         <ul>
-          <li>150 automações no portfólio.</li>
-          <li>17 novas automações para a Contabilidade.</li>
-          <li>Estimativa de 70 horas por mês.</li>
-        </ul>
-        <p class="todo" style="margin-top:14px">[Opcional: explique como a estimativa de 70 h/mês foi calculada, para dar transparência ao número.]</p>
+  		   <li><strong>17 novas automações entregues em um ano</strong> para a Contabilidade.</li>
+		  <li><strong>Cerca de 70 horas mensais de trabalho manual economizadas</strong>, em estimativa baseada no tempo informado pelas pessoas responsáveis pelas atividades automatizadas.</li>
+		  <li><strong>Portfólio de aproximadamente 150 automações</strong> utilizadas em diferentes áreas da empresa, com acompanhamento de execuções, falhas e necessidades de sustentação.</li>
+		  <li><strong>Mais visibilidade para as áreas de negócio</strong> sobre os resultados das execuções e os itens que exigiam intervenção.</li>
+		  <li><strong>Redução de etapas manuais em processos específicos</strong>, liberando tempo das pessoas para outras atividades.</li>
+		</ul>
       </div>
 
       <div class="block">
-        <h2>Aprendizados</h2>
-        <div class="todo">[Escreva aqui: o que você levou desse projeto e o que faria diferente.]</div>
+        <h2>O que esse trabalho exigiu</h2>
+        <div>Mais do que detalhar funcionalidades, o trabalho exigia entender como as atividades aconteciam na prática, distinguir o que precisava ser mantido do que poderia ser simplificado e equilibrar novas entregas com a continuidade da operação. Minha contribuição estava em transformar problemas do dia a dia em melhorias viáveis, conectando as necessidades das áreas às possibilidades técnicas do time.</div>
       </div>
 
     </div>
