@@ -201,10 +201,12 @@
     <div>
       <div class="label">01 — O desafio</div>
       <h2>O desafio</h2>
-        <p>As automações apoiavam atividades importantes para a rotina das áreas, incluindo obrigações com prazos legais. Quando uma automação falhava, o trabalho precisava ser realizado manualmente, muitas vezes com pouco tempo disponível e possibilidade de horas extras. </p>
-        <p>Ao mesmo tempo, novas demandas chegavam de diferentes áreas, e nem sempre o caminho era simplesmente automatizar o processo como ele já existia. Havia oportunidades de rever etapas manuais, simplificar atividades e melhorar a forma como as pessoas acompanhavam as execuções. </p>
-    </div>
-
+        <p>As automações apoiavam atividades importantes para a rotina das áreas, incluindo obrigações com prazos legais.</p> 
+        <div class="more-text" id="mais-desafio" hidden>
+        <p>Quando uma automação falhava, o trabalho precisava ser realizado manualmente, muitas vezes com pouco tempo disponível e possibilidade de horas extras. </p>
+          <p>Ao mesmo tempo, novas demandas chegavam de diferentes áreas, e nem sempre o caminho era simplesmente automatizar o processo como ele já existia. Havia oportunidades de rever etapas manuais, simplificar atividades e melhorar a forma como as pessoas acompanhavam as execuções. </p>
+        </div>
+        <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-desafio">mais ...</button>
     <div>
       <div class="label">02 — Como conduzi o trabalho</div>
       <h2>Minha abordagem</h2>
@@ -219,9 +221,7 @@
               
               <div class="more-text" id="mais-priorizar" hidden>
                 <p>Também buscava entregar soluções mais simples quando isso permitia resolver rapidamente um problema, sem deixar de lado demandas mais complexas.</p>
-              
                 <p>Quando havia conflito entre uma nova entrega e uma falha em uma automação já utilizada pela área, priorizava a continuidade da operação. A automação existente fazia parte da rotina e, se não fosse restabelecida, alguém precisaria executar manualmente aquela atividade.</p>
-              
                 <p>Os prazos legais também faziam parte dessa análise. Como as execuções eram programadas com antecedência, havia uma janela para identificar falhas e permitir que a área recorresse ao processo manual quando necessário.</p>
               </div>
               
@@ -232,14 +232,28 @@
           <div class="icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="4.5"/><path d="M14 4h4l.8 3.2 2.6 1.1 2.8-1.7 2.8 2.8-1.7 2.8 1.1 2.6L28 15v4l-3.2.8-1.1 2.6 1.7 2.8-2.8 2.8-2.8-1.7-2.6 1.1L18 28h-4l-.8-3.2-2.6-1.1-2.8 1.7-2.8-2.8 1.7-2.8-1.1-2.6L4 18v-4l3.200-.8 1.100-2.600-1.700-2.800 2.800-2.800 2.800 1.700 2.600-1.100z"/></svg></div>
           <div>
             <h3>Entender o processo antes de automatizar</h3>
-            <p>Análise das etapas e identificação de oportunidades para eliminar tarefas manuais.</p>
+            <p>Em algumas situações, a oportunidade de melhoria estava nas próprias etapas do processo.</p>
+
+            <div class="more-text" id="mais-entender" hidden>
+                <p>Em uma delas, uma pessoa precisava extrair uma planilha de um BI, remover colunas, consultar códigos de empresas a partir do CNPJ e preencher alíquotas conforme regras definidas. Analisei essas etapas com o time e identificamos que parte das informações poderia ser obtida diretamente pela automação, enquanto outras tarefas poderiam ser eliminadas.</p>
+                <p>Com a mudança, a pessoa deixou de gastar tempo nessas alterações manuais e pôde se dedicar a outras atividades. A extração inicial da planilha permaneceu necessária devido às permissões disponíveis para a automação.</p>
+                <p>Em outro caso, a atividade envolvia ler informações de notas fiscais em PDF e transcrevê-las para uma planilha. Investiguei os diferentes formatos dos documentos e as variações na apresentação das informações, detalhei os requisitos para o time de desenvolvimento e acompanhei a implementação e os testes. A automação passou a extrair os dados, com uma etapa de conferência pela área antes de seguir o processamento.</p>
+              </div>
+              <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-entender">mais ...</button>
           </div>
         </div>
         <div class="item">
           <div class="icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="9" r="3.5"/><circle cx="7" cy="12" r="3"/><circle cx="25" cy="12" r="3"/><path d="M9 26c0-5 3-8 7-8s7 3 7 8zM2 24c0-3.500 2-5.500 5-5.500M30 24c0-3.500-2-5.500-5-5.500"/></svg></div>
           <div>
             <h3>Conectar negócio e tecnologia</h3>
-            <p>Requisitos, regras, alinhamentos, testes e acompanhamento das execuções.</p>
+            <p>Eu era responsável por compreender o processo com a área de negócio e traduzir seu funcionamento, regras e exceções em requisitos para o time de desenvolvimento. </p>
+            <div class="more-text" id="mais-conectar" hidden>
+                <p>Também esclarecia dúvidas durante a implementação, alinhava expectativas com os envolvidos e realizava os testes iniciais e o acompanhamento das primeiras execuções em produção.</p>
+                <p>Quando os erros se repetiam, investigava suas causas para entender se estavam relacionados a mudanças em sites de prefeituras, alterações em rotinas do ERP, configurações de negócio ou problemas técnicos.</p>
+                <p>Essa análise ajudava a identificar oportunidades de atuação. Em situações de mudanças nos sites, por exemplo, trabalhamos em duas frentes: orientar a área a verificar os sites alguns dias antes da execução e prever validações na automação para identificar alterações em funções ou campos e alertar as equipes envolvidas.</p>
+              </div>
+              <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-conectar">mais ...</button>
+          </div>
           </div>
         </div>
       </div>
