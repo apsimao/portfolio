@@ -10,17 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f4ede5;
-    --bg-hero:#f4ede5;
-    --bg-alt:#f4ede5;
+    --bg:#faf0e6;
+    --bg-hero:#faf0e6;
+    --bg-alt:#faf0e6;
+    --bg-soft:#f3e4d6;
     --ink:#4a1c1c;
     --text:#5b4a44;
     --muted:#7a6a63;
     --accent:#b5532f;
     --accent-dark:#7a2323;
-    --sand:#ead6c1;
-    --line:#e4d6c6;
-    --card:#f4ede5;
+    --sand:#f3e4d6;
+    --line:#e2c9b4;
+    --card:#faf0e6;
     --serif:'Cormorant Garamond', Georgia, serif;
     --sans:'Inter', system-ui, sans-serif;
     --hand:'Caveat', cursive;
@@ -97,8 +98,8 @@
   .tag{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin:22px 0 10px}
   .card h3{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.15;color:var(--ink);margin-bottom:14px}
   .card p.desc{font-size:13.5px;color:var(--muted);margin-bottom:18px}
-  .stats{display:grid;grid-template-columns:repeat(3,1fr);background:#f2e6d9;border-radius:6px;padding:16px 8px;margin-bottom:22px}
-  .stat{padding:0 14px;border-right:1px solid #dcc9b5}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg-soft);border-radius:6px;padding:16px 8px;margin-bottom:22px}
+  .stat{padding:0 14px;border-right:1px solid var(--line)}
   .stat:last-child{border-right:0}
   .stat strong{display:block;font-family:var(--serif);font-weight:500;font-size:26px;color:var(--accent-dark);line-height:1.1}
   .stat strong small{font-size:17px}
@@ -143,7 +144,7 @@
   }
   @media (max-width:520px){
     .stats{grid-template-columns:1fr;gap:14px}
-    .stat{border-right:0;border-bottom:1px solid #dcc9b5;padding:0 14px 12px}
+    .stat{border-right:0;border-bottom:1px solid var(--line);padding:0 14px 12px}
     .stat:last-child{border-bottom:0;padding-bottom:0}
     .nav-cta{font-size:12px}
   }
