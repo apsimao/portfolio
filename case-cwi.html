@@ -64,7 +64,16 @@
   .two h2{font-size:clamp(30px,3.8vw,38px);margin:14px 0 18px}
   .two p{font-size:16.5px;line-height:1.7}
   .approach{display:flex;flex-direction:column;gap:6px}
-  .item{display:flex;gap:18px;align-items:center}
+  .item{display:flex;gap:18px;align-items:flex-start}
+  .item-body{
+    flex:1;
+    min-width:0;
+    min-height:64px;            /* mesma altura do ícone */
+    display:flex;
+    flex-direction:column;
+    justify-content:center;     /* centraliza o texto de uma linha com o ícone */
+  }
+  .item-body .toggle{align-self:flex-start;margin-top:6px}
   .icon{flex:0 0 64px;height:64px;border-radius:50%;background:var(--peach);display:grid;place-items:center}
   .icon svg{width:30px;height:30px;stroke:var(--red);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
   .item p{font-size:15px;line-height:1.5;color:var(--ink)}
@@ -212,16 +221,19 @@
       <div class="approach">
         <div class="item">
           <div class="icon"><svg viewBox="0 0 32 32"><path d="M5 27V19h5v8M13.500 27V12h5v15M22 27V5h5v22M3 27h26"/></svg></div>
-          <p>Organizar o trabalho por funcionalidade.</p>
-          <!-- Texto escondido: troque o conteúdo abaixo pelo seu, ou apague este bloco e o botão se não for usar -->
-          <div class="more-text" id="mais-organizacao" hidden>
-            <p>Trabalhei na organização de cards funcionais, reunindo o objetivo de negócio e o comportamento esperado, com as tarefas técnicas necessárias para desenvolvimento e testes</p>
-            <p>Também contribuí para explicitar o que significava concluir uma atividade. Os critérios de pronto e checklists passaram a orientar validações importantes, como verificações de UX e testes unitários, reduzindo dúvidas sobre o que ainda precisava acontecer antes de considerar uma entrega concluída.</p>
+          <div class="item-body">
+            <p>Organizar o trabalho por funcionalidade.</p>
+            <!-- Texto escondido: troque o conteúdo abaixo pelo seu, ou apague este bloco e o botão se não for usar -->
+            <div class="more-text" id="mais-organizacao" hidden>
+              <p>Trabalhei na organização de cards funcionais, reunindo o objetivo de negócio e o comportamento esperado, com as tarefas técnicas necessárias para desenvolvimento e testes</p>
+              <p>Também contribuí para explicitar o que significava concluir uma atividade. Os critérios de pronto e checklists passaram a orientar validações importantes, como verificações de UX e testes unitários, reduzindo dúvidas sobre o que ainda precisava acontecer antes de considerar uma entrega concluída.</p>
+            </div>
+            <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-organizacao">mais ...</button>
           </div>
-          <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-organizacao">mais ...</button>
         </div>
         <div class="item">
           <div class="icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="9" r="3.5"/><circle cx="7" cy="12" r="3"/><circle cx="25" cy="12" r="3"/><path d="M9 26c0-5 3-8 7-8s7 3 7 8zM2 24c0-3.500 2-5.500 5-5.500M30 24c0-3.500-2-5.500-5-5.500"/></svg></div>
+          <div class="item-body">
           <p>Definir limites de trabalho em andamento.</p>
           <!-- Texto escondido: troque o conteúdo abaixo pelo seu, ou apague este bloco e o botão se não for usar -->
             <div class="more-text" id="mais-limites" hidden>
@@ -229,19 +241,23 @@
               <p>A intenção era equilibrar a entrada de trabalho com a capacidade de execução e teste, tornando mais visíveis os acúmulos e incentivando o time a concluir atividades antes de iniciar outras.</p>
             </div>
             <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-limites">mais ...</button>
+          </div>
         </div>
         <div class="item">
           <div class="icon"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="M20 20l8 8"/></svg></div>
-          <p>Dar visibilidade a bloqueios e dependências.</p>
-          <!-- Texto escondido: troque o conteúdo abaixo pelo seu, ou apague este bloco e o botão se não for usar -->
-              <div class="more-text" id="mais-visibilidade" hidden>
-                <p>O Kanbanize oferecia recursos visuais, como o heatmap, utilizados no acompanhamento diário para identificar itens parados, riscos e possíveis atrasos. Quando surgiam bloqueios, o time podia direcionar esforços para destravá-los, inclusive com mobilização pontual de pessoas para atuar em conjunto.</p>
-                <p>Esse acompanhamento também ajudava a tornar dependências externas mais explícitas, permitindo sinalizar com antecedência o que poderia comprometer a sequência do trabalho.</p>
-              </div>
-              <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-visibilidade">mais ...</button>
+          <div class="item-body">
+            <p>Dar visibilidade a bloqueios e dependências.</p>
+            <!-- Texto escondido: troque o conteúdo abaixo pelo seu, ou apague este bloco e o botão se não for usar -->
+                <div class="more-text" id="mais-visibilidade" hidden>
+                  <p>O Kanbanize oferecia recursos visuais, como o heatmap, utilizados no acompanhamento diário para identificar itens parados, riscos e possíveis atrasos. Quando surgiam bloqueios, o time podia direcionar esforços para destravá-los, inclusive com mobilização pontual de pessoas para atuar em conjunto.</p>
+                  <p>Esse acompanhamento também ajudava a tornar dependências externas mais explícitas, permitindo sinalizar com antecedência o que poderia comprometer a sequência do trabalho.</p>
+                </div>
+                <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-visibilidade">mais ...</button>
+          </div>
         </div>
         <div class="item">
           <div class="icon"><svg viewBox="0 0 32 32"><path d="M4 4v24h24M8 22l6-7 4 4 8-10M21 9h5v5"/></svg></div>
+          <div class="item-body">
           <p>Usar métricas para orientar decisões.</p>
           <!-- Texto escondido: troque o conteúdo abaixo pelo seu, ou apague este bloco e o botão se não for usar -->
               <div class="more-text" id="mais-metrica" hidden>
@@ -249,9 +265,11 @@
                 <p>As métricas também apoiavam o planejamento. Por exemplo, ajudavam a estimar quando uma funcionalidade precisava entrar no fluxo para que houvesse tempo suficiente para concluí-la em uma janela de aproximadamente três meses, considerando a capacidade e o comportamento observado das entregas.</p>
               </div>
               <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-metrica">mais ...</button>
+          </div>
         </div>
         <div class="item">
           <div class="icon"><svg viewBox="0 0 32 32"><path d="M26 12a10 10 0 0 0-18-3M6 6v4h4M6 20a10 10 0 0 0 18 3M26 26v-4h-4"/></svg></div>
+          <div class="item-body">
           <p>Criar espaço para melhoria contínua.</p>
           <!-- Texto escondido: troque o conteúdo abaixo pelo seu, ou apague este bloco e o botão se não for usar -->
               <div class="more-text" id="mais-melhoria" hidden>
@@ -259,6 +277,7 @@
                 <p>Além de organizar o processo, essa rotina ajudou a criar um entendimento compartilhado sobre o trabalho. Após uma apresentação do case em um capítulo interno da CWI, profissionais do time relataram que as entregas haviam ficado mais claras e que a integração e o trabalho compartilhado entre as pessoas tinham melhorado.</p>
               </div>
               <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-melhoria">mais ...</button>
+          </div>
         </div>
       </div>
     </div>
