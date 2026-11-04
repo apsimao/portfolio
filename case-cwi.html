@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case CWI Software · Ana Paula Simão</title>
+<meta name="description" content="Com a adoção do Kanban e o uso de métricas, o ciclo de entrega de uma feature passou de até 85 dias para 24 dias em um projeto de pagamentos via Pix.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf0e6;
+    --bg-soft:#f3e4d6;
+    --ink:#4a1c1c;
+    --red:#7a2323;
+    --accent:#b5532f;
+    --text:#5b4a44;
+    --muted:#7a6a63;
+    --line:#e2c9b4;
+    --peach:#f8dcc4;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* MENU */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:20px}
+  .logo{font-family:var(--serif);font-size:36px;color:var(--ink);letter-spacing:.5px;line-height:1}
+  .menu{display:flex;gap:30px;margin-left:36px;margin-right:auto}
+  .menu a{font-size:13.5px;color:var(--ink);padding-bottom:4px;border-bottom:1.5px solid transparent}
+  .menu a.active{border-color:var(--red)}
+  .menu a:hover{border-color:var(--accent)}
+  .nav-cta{font-size:13px;color:var(--red);border-bottom:1px solid var(--red);padding-bottom:3px;display:inline-flex;gap:10px;align-items:center}
+  .arrow{display:inline-block;width:16px;height:10px}
+
+  /* TÍTULOS DE SEÇÃO */
+  .label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:500;display:flex;align-items:center;gap:14px}
+  .label::after{content:"";width:46px;height:1px;background:var(--accent)}
+  h1,h2{font-family:var(--serif);font-weight:500;color:var(--red);line-height:1.08}
+
+  /* TOPO */
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding:22px 0 40px}
+  .hero h1{font-size:clamp(40px,5.6vw,62px);margin:18px 0 20px}
+  .hero .sub{font-weight:500;color:var(--red);margin-bottom:14px}
+  .hero p{max-width:440px}
+  .hero-art svg{width:100%;height:auto;display:block;max-width:440px;margin-left:auto}
+
+  /* NÚMEROS */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg-soft);border-radius:14px;padding:26px 14px}
+  .stat{padding:0 34px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat strong{display:block;font-family:var(--serif);font-weight:500;font-size:50px;color:var(--red);line-height:1}
+  .stat span{display:block;color:var(--ink);margin-top:6px;font-size:14.5px}
+
+  /* DESAFIO + ABORDAGEM */
+  .two{display:grid;grid-template-columns:1fr 1.15fr;margin-top:50px}
+  .two > div:first-child{padding-right:48px;border-right:1px solid var(--line)}
+  .two > div:last-child{padding-left:48px}
+  .two h2{font-size:clamp(30px,3.8vw,38px);margin:14px 0 18px}
+  .two p{font-size:16.5px;line-height:1.7}
+  .approach{display:flex;flex-direction:column;gap:6px}
+  .item{display:flex;gap:18px;align-items:center}
+  .icon{flex:0 0 64px;height:64px;border-radius:50%;background:var(--peach);display:grid;place-items:center}
+  .icon svg{width:30px;height:30px;stroke:var(--red);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .item p{font-size:15px;line-height:1.5;color:var(--ink)}
+
+  /* DECISÕES */
+  .decisions{margin-top:54px}
+  .decisions h2{font-size:clamp(30px,4.2vw,42px);margin:12px 0 22px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .dcard{background:var(--bg-soft);border-radius:12px;padding:22px 24px;display:flex;gap:16px;align-items:flex-start}
+  .dcard svg{flex:0 0 38px;width:38px;height:38px;stroke:var(--red);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+  .dcard h3{font-family:var(--serif);font-weight:500;font-size:21px;color:var(--red);line-height:1.2;margin-bottom:6px}
+  .dcard p{font-size:13.5px;color:var(--muted);line-height:1.55}
+
+  /* RESULTADOS */
+  .results{margin-top:54px}
+  .results h2{font-size:clamp(30px,4.2vw,42px);margin:12px 0 22px}
+  .res-grid{display:grid;grid-template-columns:auto auto 1fr;align-items:center}
+  .res{padding:6px 44px 6px 0}
+  .res + .res{padding-left:44px;border-left:1px solid var(--line)}
+  .res strong{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(46px,6vw,64px);color:var(--red);line-height:1}
+  .res span{display:block;margin-top:8px;color:var(--ink);font-size:14.5px}
+  .res-text{border-left:1px solid var(--line);padding:6px 0 6px 44px;font-size:16px;color:var(--ink);line-height:1.6;max-width:380px}
+
+  /* PRÓXIMO CASE */
+  .next-case{margin:46px 0 60px;background:var(--bg-soft);border-radius:22px;padding:30px 40px;display:grid;grid-template-columns:1fr auto;align-items:center}
+  .next-case .label{font-size:10.5px}
+  .next-case .label::after{display:none}
+  .next-case h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3vw,30px);color:var(--red);line-height:1.15;margin-top:8px}
+  .next-case a{font-size:13px;color:var(--red);border-bottom:1px solid var(--red);padding-bottom:3px;display:inline-flex;gap:10px;align-items:center;margin-left:40px}
+  .next-case .go{border-left:1px solid var(--line);padding-left:40px}
+  .next-case .go a{margin-left:0}
+
+  /* "mais ... / menos" */
+  .more-text p{margin-top:12px}
+  .toggle{background:none;border:0;padding:0;margin:10px 0 0;display:inline-block;font:inherit;color:var(--accent);cursor:pointer;transition:color .2s ease}
+  .toggle:hover{color:var(--red);text-decoration:underline;text-underline-offset:3px}
+  .toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  footer{border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;padding:20px 0;font-size:11.5px;color:var(--muted);gap:16px;flex-wrap:wrap}
+  .foot a{margin-left:14px}
+
+  /* RESPONSIVO */
+  @media (max-width:900px){
+    .menu{display:none}
+    .hero,.two{grid-template-columns:1fr}
+    .hero-art svg{margin:0 auto;max-width:340px}
+    .two > div:first-child{padding-right:0;border-right:0;border-bottom:1px solid var(--line);padding-bottom:34px;margin-bottom:34px}
+    .two > div:last-child{padding-left:0}
+    .cards{grid-template-columns:1fr}
+    .res-grid{grid-template-columns:1fr 1fr}
+    .res-text{grid-column:1 / -1;border-left:0;border-top:1px solid var(--line);padding:22px 0 0;margin-top:22px;max-width:none}
+    .next-case{grid-template-columns:1fr;gap:20px;padding:28px 24px}
+    .next-case .go{border-left:0;padding-left:0}
+  }
+  @media (max-width:620px){
+    .stats{grid-template-columns:1fr;gap:18px}
+    .stat{border-right:0;border-bottom:1px solid var(--line);padding:0 18px 16px}
+    .stat:last-child{border-bottom:0;padding-bottom:0}
+    .res-grid{grid-template-columns:1fr}
+    .res,.res + .res{padding:10px 0;border-left:0}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arrow" viewBox="0 0 16 10"><path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="container">
+  <nav>
+    <a href="index.html" class="logo">APS</a>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="index.html#cases" class="active">Cases</a>
+      <a href="index.html#sobre">Sobre mim</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="curriculo-ana-paula-simao.pdf" download="Curriculo-Ana-Paula-Simao.pdf">Currículo</a>
+    </div>
+    <a href="index.html#contato" class="nav-cta">Vamos conversar <svg class="arrow"><use href="#arrow"/></svg></a>
+  </nav>
+
+  <!-- TOPO -->
+  <section class="hero">
+    <div>
+      <div class="label">CWI Software</div>
+      <h1>De 85 para 24 dias: melhorando o fluxo de entrega</h1>
+      <p class="sub">Gestão de projetos · Métodos ágeis · Entrega contínua</p>
+      <p>Com a adoção do Kanban e o uso de métricas, reduzimos o ciclo de entrega de uma feature de até 85 dias para 24 dias.</p>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 440 340" role="img" aria-label="Ilustração de quadro Kanban com as colunas A fazer, Em andamento e Concluído">
+        <path d="M40 120 C50 50 200 20 330 36 C420 48 440 130 410 210 C380 290 250 330 150 306 C70 288 30 220 40 120Z" fill="#f8d9bd" opacity=".85"/>
+        <path d="M120 200 C170 150 300 140 390 170 C430 220 390 290 300 300 C210 310 100 270 120 200Z" fill="#f4c7a2" opacity=".6"/>
+        <g stroke="#4a1c1c" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M78 74 C150 66 300 62 392 56 L392 230 M78 74 L78 252 M184 70 L184 248 M286 62 L286 244"/>
+          <path d="M392 236 C300 300 160 292 78 262"/>
+          <path d="M376 212 L396 232 L370 242"/>
+        </g>
+        <g font-family="Inter,sans-serif" font-size="12.5" fill="#4a1c1c">
+          <rect x="88" y="86" width="82" height="24" rx="5" fill="#f8cfae"/><text x="100" y="103">A fazer</text>
+          <rect x="196" y="82" width="82" height="24" rx="5" fill="#f8cfae"/><text x="202" y="99">Em andamento</text>
+          <rect x="298" y="76" width="80" height="24" rx="5" fill="#f8cfae"/><text x="308" y="93">Concluído</text>
+        </g>
+        <g stroke="#4a1c1c" stroke-width="1.2">
+          <rect x="94" y="120" width="68" height="22" rx="3" fill="#f6cba9"/><path d="M104 131h46" fill="none"/>
+          <rect x="94" y="148" width="68" height="22" rx="3" fill="#fbeee0"/><path d="M104 159h46" fill="none"/>
+          <rect x="94" y="188" width="68" height="34" rx="3" fill="#b3ab8d"/><path d="M106 205h44" fill="none"/>
+          <rect x="198" y="118" width="68" height="26" rx="3" fill="#fbeee0"/><path d="M210 131h44" fill="none"/>
+          <rect x="198" y="150" width="68" height="26" rx="3" fill="#fbeee0"/><path d="M210 163h44" fill="none"/>
+          <rect x="198" y="196" width="68" height="30" rx="3" fill="#f6b777"/><path d="M210 211h44" fill="none"/>
+          <rect x="300" y="110" width="68" height="34" rx="3" fill="#f2a96b"/><path d="M312 127h44" fill="none"/>
+          <rect x="300" y="152" width="68" height="34" rx="3" fill="#fbeee0"/><path d="M312 164h44M312 174h44" fill="none"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- NÚMEROS -->
+  <section class="stats">
+    <div class="stat"><strong>85 dias</strong><span>ciclo inicial</span></div>
+    <div class="stat"><strong>24 dias</strong><span>após a melhoria</span></div>
+    <div class="stat"><strong>72%</strong><span>de redução</span></div>
+  </section>
+
+  <!-- DESAFIO + ABORDAGEM -->
+  <section class="two">
+    <div>
+      <div class="label">01 — O desafio</div>
+      <h2>Um fluxo de entrega pouco previsível</h2>
+      <p>O time enfrentava um fluxo de trabalho com cards fragmentados, sem critérios claros de “pronto”, e pouca visibilidade sobre o andamento das entregas.</p>
+
+      <!-- Texto escondido: troque o conteúdo abaixo pelo seu, ou apague este bloco e o botão se não for usar -->
+      <div class="more-text" id="mais-desafio" hidden>
+        <p>[Escreva aqui o restante do texto do desafio.]</p>
+      </div>
+      <button type="button" class="toggle" aria-expanded="false" aria-controls="mais-desafio">mais ...</button>
+    </div>
+
+    <div>
+      <div class="label">02 — Minha abordagem</div>
+      <h2>Organização, dados e engajamento</h2>
+      <div class="approach">
+        <div class="item">
+          <div class="icon"><svg viewBox="0 0 32 32"><path d="M5 27V19h5v8M13.500 27V12h5v15M22 27V5h5v22M3 27h26"/></svg></div>
+          <p>Organizar o trabalho por funcionalidade.</p>
+        </div>
+        <div class="item">
+          <div class="icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="9" r="3.5"/><circle cx="7" cy="12" r="3"/><circle cx="25" cy="12" r="3"/><path d="M9 26c0-5 3-8 7-8s7 3 7 8zM2 24c0-3.500 2-5.500 5-5.500M30 24c0-3.500-2-5.500-5-5.500"/></svg></div>
+          <p>Definir limites de trabalho em andamento.</p>
+        </div>
+        <div class="item">
+          <div class="icon"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="M20 20l8 8"/></svg></div>
+          <p>Dar visibilidade a bloqueios e dependências.</p>
+        </div>
+        <div class="item">
+          <div class="icon"><svg viewBox="0 0 32 32"><path d="M4 4v24h24M8 22l6-7 4 4 8-10M21 9h5v5"/></svg></div>
+          <p>Usar métricas para orientar decisões.</p>
+        </div>
+        <div class="item">
+          <div class="icon"><svg viewBox="0 0 32 32"><path d="M26 12a10 10 0 0 0-18-3M6 6v4h4M6 20a10 10 0 0 0 18 3M26 26v-4h-4"/></svg></div>
+          <p>Criar espaço para melhoria contínua.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DECISÕES NA PRÁTICA -->
+  <section class="decisions">
+    <div class="label">03 — Decisões na prática</div>
+    <h2>Como conduzi a mudança</h2>
+    <div class="cards">
+      <div class="dcard">
+        <svg viewBox="0 0 32 32"><rect x="11" y="3" width="10" height="7"/><rect x="2" y="22" width="9" height="7"/><rect x="21" y="22" width="9" height="7"/><rect x="11.500" y="22" width="9" height="7"/><path d="M16 10v6M6.500 22v-6h19v6"/></svg>
+        <div>
+          <h3>Fluxo Kanban e WIP</h3>
+          <p>Cards completos, com DoD e limites de trabalho em cada etapa.</p>
+        </div>
+      </div>
+      <div class="dcard">
+        <svg viewBox="0 0 32 32"><path d="M5 27V19h5v8M13.500 27V12h5v15M22 27V5h5v22M3 27h26"/></svg>
+        <div>
+          <h3>Métricas para ajuste</h3>
+          <p>Cycle time, throughput e heatmap para planejamento e priorização.</p>
+        </div>
+      </div>
+      <div class="dcard">
+        <svg viewBox="0 0 32 32"><path d="M26 12a10 10 0 0 0-18-3M6 6v4h4M6 20a10 10 0 0 0 18 3M26 26v-4h-4"/></svg>
+        <div>
+          <h3>Retrospectivas e Kaizen</h3>
+          <p>Aprendizados convertidos em ações para evoluir o processo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTADOS -->
+  <section class="results">
+    <div class="label">04 — Resultados</div>
+    <h2>Resultados que comprovam a evolução</h2>
+    <div class="res-grid">
+      <div class="res"><strong>24 dias</strong><span>de ciclo de entrega</span></div>
+      <div class="res"><strong>72%</strong><span>de redução no tempo</span></div>
+      <p class="res-text">O projeto trouxe maior previsibilidade para o time e para o negócio, com entregas mais rápidas e qualidade mantida.</p>
+    </div>
+  </section>
+
+  <!-- PRÓXIMO CASE -->
+  <section class="next-case">
+    <div>
+      <div class="label">Case</div>
+      <h3>Automatizar melhor começa por entender o processo</h3>
+    </div>
+    <div class="go">
+      <a href="case-base2.html">Ver case Base2 <svg class="arrow"><use href="#arrow"/></svg></a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container foot">
+    <div>Ana Paula Simão · Portfólio</div>
+    <div>
+      <a href="index.html#cases">Cases</a>
+      <a href="index.html#sobre">Sobre mim</a>
+      <a href="index.html#contato">Contato</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var alvo = document.getElementById(btn.getAttribute('aria-controls'));
+      var aberto = btn.getAttribute('aria-expanded') === 'true';
+      alvo.hidden = aberto;
+      btn.setAttribute('aria-expanded', String(!aberto));
+      btn.textContent = aberto ? 'mais ...' : 'menos';
+    });
+  });
+</script>
+
+</body>
+</html>
